@@ -2,7 +2,7 @@
 
 A short script that computes statistics based on Clan Wars II weekly performance for a clan in Clash Royale.
 
-requires:
+Requires:
 1. the clan's tag (starting with #). Can be found (for example) here: https://royaleapi.com/?lang=en 
 2. a token from supercell's API for Clash Royale: https://developer.clashroyale.com/#/
    the token can be associated with a number of IPs
