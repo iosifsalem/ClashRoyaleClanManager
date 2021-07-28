@@ -1,4 +1,4 @@
-# ClashRoyaleClanManager
+# Clash Royale Clan Manager
 
 A short script that computes statistics based on Clan Wars II weekly performance for a clan in Clash Royale.
 
