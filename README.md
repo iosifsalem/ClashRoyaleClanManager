@@ -11,7 +11,7 @@ Computes:
 1. average war rank
 2. weekly war champ (member with the most fame in the past war)
 
-3. a promotion/demotion/warning/kick list to which member are added with the following rules:
+3. promotion/demotion/warning/kick lists to which members are added with the following rules:
     - promotion rule: two consecutive weeks of at least 1600 fame in war
     - demotion rule (elders): less than 1600 for two consecutive weeks 
     - warning rule: less than losing all attacks in 3/4 days in the last war 
