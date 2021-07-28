@@ -12,10 +12,10 @@ Computes:
 2. weekly war champ (member with the most fame in the past war)
 
 3. a promotion/demotion/warning/kick list to which member are added with the following rules:
-   a. promotion rule: two consecutive weeks of at least 1600 fame in war
-   b. demotion rule (elders): less than 1600 for two consecutive weeks 
-   c. warning rule: less than losing all attacks in 3/4 days in the last war 
-   d. kick rule: total score for two consecutive weeks is less than 2800. The thresshold can be achieved by losing all attacks in 3/4 (1200) and 4/4 (1600) days.
+    - promotion rule: two consecutive weeks of at least 1600 fame in war
+    - demotion rule (elders): less than 1600 for two consecutive weeks 
+    - warning rule: less than losing all attacks in 3/4 days in the last war 
+    - kick rule: total score for two consecutive weeks is less than 2800. The thresshold can be achieved by losing all attacks in 3/4 (1200) and 4/4 (1600) days.
 
 Decisions on clan updates can be made according to the four lists. The script also prints a full war history for all members in the kick list.
 
