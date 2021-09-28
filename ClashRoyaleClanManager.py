@@ -44,7 +44,7 @@ def ClashRoyaleClanManager(clan_tag, token, data_fetched):
         with open('logs/riverracelog.json', 'w') as outfile:
             json.dump(riverracelog, outfile)  
     
-    race_indices = [f"{war_week['seasonId']}:{war_week['sectionIndex']}" for war_week in riverracelog['items']]
+    race_indices = [f"{war_week['seasonId']}:{war_week['sectionIndex']}" for war_week in riverracelog['items']]    
     last_race = str(max(race_indices))
     race_indices.remove(last_race)
     second_last_race = str(max(race_indices))
@@ -86,7 +86,15 @@ def ClashRoyaleClanManager(clan_tag, token, data_fetched):
     week_fame = [(clan_log[key]['name'], clan_log[key]['fame'][last_race]) for key in clan_log if key != 'ranks' and last_race in clan_log[key]['fame']]
     week_fame.sort(key = lambda x: x[1])
     week_champ = week_fame.pop()
-        
+
+    # check for multiple champs 
+    max_score = week_champ[1]
+    if week_fame[-1][1] == max_score:
+        week_champ = [week_champ, week_fame.pop()]
+
+        while week_fame[-1][1] == max_score:
+            week_champ.append(week_fame.pop())            
+    
     # status update lists
     last_two_weeks_fame = [(clan_log[key]['name'], clan_log[key]['role'], clan_log[key]['fame'][last_race], clan_log[key]['fame'][second_last_race]) for key in clan_log if key != 'ranks' and last_race in clan_log[key]['fame'] and second_last_race in clan_log[key]['fame']]    
     kick_list = []
@@ -113,7 +121,7 @@ def ClashRoyaleClanManager(clan_tag, token, data_fetched):
             
         # kick rule: total score for two consecutive weeks is less than 2800 
         # thresshold can be achieved by losing all attacks in 3/4 (1200) and 4/4 (1600) days 
-        if last_week_fame + second_last_week_fame < 2800 and role == 'member':
+        if last_week_fame + second_last_week_fame < 3200 and role == 'member':
             kick_list.append(item)       
 
     print('\nfull war history of members in kick list:')
